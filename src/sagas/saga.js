@@ -5,7 +5,7 @@ import { DATA_AVAILABLE } from '../actions/actions';
 
 // Our worker Saga: will perform the async increment task
 export function* incrementAsync() {
-  console.log('chamou aqui...');
+  console.log('está no saga');
   yield call(delay, 1000);
   yield put({
     type: 'INCREMENT',

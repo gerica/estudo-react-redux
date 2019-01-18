@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { createSelector, createStructuredSelector } from 'reselect';
 import * as Actions from './actions/actions';
 import ContactForm from './components/concact-form';
 import logo from './logo.svg';
 import './App.css';
+import * as selectors from './selectors/selector';
 
 class App extends Component {
   submit = values => {
@@ -13,7 +15,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 
   render() {
@@ -32,16 +34,15 @@ class App extends Component {
 //   getData: React.PropTypes.func,
 // };
 
-const mapStateToProps = (state /*, ownProps*/) => {
-  return {
-    state: state,
-  };
-};
+const mapStateToProps = createStructuredSelector({
+  data: selectors.selectorData(),
+  form: selectors.selectorForm(),
+  loading: selectors.selectorLoading(),
+});
 
 function mapDispatchToProps(dispatch) {
   return {
     getData: value => {
-      console.log(value);
       dispatch(Actions.getData(value));
     },
   };

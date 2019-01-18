@@ -3,11 +3,12 @@ import { reducer as formReducer } from 'redux-form';
 
 import { DATA_AVAILABLE } from '../actions/actions'; //Import the actions types constant we defined in our actions
 
-let dataState = { data: [], loading: true };
+let dataState = { data: null, loading: true };
 
 const dataReducer = (state = dataState, action) => {
   switch (action.type) {
     case DATA_AVAILABLE:
+      console.log('está no reducer');
       state = Object.assign({}, state, { data: action.data, loading: false });
       return state;
     default:
