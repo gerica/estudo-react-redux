@@ -8,8 +8,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const initialState = {};
-const store = configureStore(initialState, {});
+const store = configureStore();
 const rootElement = document.getElementById('root');
 ReactDOM.render(
   <Provider store={store}>

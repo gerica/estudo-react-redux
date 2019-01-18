@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { createSelector, createStructuredSelector } from 'reselect';
+import { createStructuredSelector } from 'reselect';
 import * as Actions from './actions/actions';
 import ContactForm from './components/concact-form';
-import logo from './logo.svg';
 import './App.css';
 import * as selectors from './selectors/selector';
 

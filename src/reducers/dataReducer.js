@@ -1,6 +1,3 @@
-import { combineReducers } from 'redux';
-import { fromJS } from 'immutable';
-
 import { DATA_AVAILABLE } from '../actions/actions'; //Import the actions types constant we defined in our actions
 
 // const initialState = fromJS({
